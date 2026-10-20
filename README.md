@@ -113,6 +113,21 @@ Chart image repositories are unchanged. Use the [RC image overrides](docs/releas
 
 For setup, version selection, or migrating an existing release branch, refer to the [RC guide](https://github.com/dsx-ai-factory/dsx-github-actions/blob/main/docs/release-candidate-publishing.md).
 
+### Promote an RC
+
+Promotion is disabled by default. Complete the
+[release setup](https://github.com/dsx-ai-factory/dsx-github-actions/blob/main/docs/promote-rc.md)
+before enabling `.github/rc-promotion.json` and setting `DSX_RELEASE_MODE=rc-promotion`.
+That mode stops automatic main releases. Until then, the existing release workflow remains active.
+
+1. Have QA validate a published RC with a successful manifest capture.
+2. Open **Actions > Promote RC > Run workflow**. Select `main` and enter `X.Y.Z-rc.N`.
+3. Confirm the RC version and source commit with the configured release reviewers.
+4. After approval, the workflow publishes `X.Y.Z` using the tested image digests.
+
+The [promotion workflow](.github/workflows/promote-rc.yml) calls the shared publisher.
+Older RCs without a promotion manifest cannot be selected.
+
 ### Roadmap
 
 Upcoming work is tracked in [GitHub Issues](https://github.com/dsx-ai-factory/dsx-exchange/issues). See [CONTRIBUTING.md](CONTRIBUTING.md) for how to get involved.
