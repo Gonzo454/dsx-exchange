@@ -90,7 +90,7 @@ See [local/mqttbs/README.md](local/mqttbs/README.md) for smoke-sized options.
 
 ### Versioning
 
-DSX Exchange follows [Semantic Versioning](https://semver.org/) (`vX.Y.Z`), automated via semantic-release. A new version is published automatically when a semantic-release compliant commit is merged to `main`.
+DSX Exchange follows [Semantic Versioning](https://semver.org/) (`vX.Y.Z`). By default, semantic-release publishes a new version when a release-worthy commit is merged to `main`. Enabling RC promotion replaces this automatic publishing path.
 
 | Commit prefix | Version bump | When to use |
 |---------------|--------------|-------------|
@@ -100,7 +100,7 @@ DSX Exchange follows [Semantic Versioning](https://semver.org/) (`vX.Y.Z`), auto
 
 ### Release Candidates
 
-1. Send feature PRs to `main`, which keeps its existing stable-release workflow.
+1. Send feature PRs to `main`.
 2. For QA, create a protected `release/X.Y.Z` branch from a tested `main` commit.
 3. Send release fixes to that branch, then bring the fixes back to `main` through PRs.
 
@@ -127,6 +127,7 @@ That mode stops automatic main releases. Until then, the existing release workfl
 
 The [promotion workflow](.github/workflows/promote-rc.yml) calls the shared publisher.
 Older RCs without a promotion manifest cannot be selected.
+The [promotion preparation and deployment requirements](docs/release-candidates.md#promote-and-deploy-an-rc) cover existing release branches, image overrides, and bundled dependencies.
 
 ### Roadmap
 
