@@ -27,7 +27,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - uses: dsx-ai-factory/dsx-github-actions/.github/actions/semantic-release@f515eb0f51c611abaa382cc6a09a042efa35d4c1
+      - uses: dsx-ai-factory/dsx-github-actions/.github/actions/semantic-release@e8c0885851e9314211f2b3439e827990a46ea593
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           extra-plugins: conventional-changelog-conventionalcommits@9.3.1
