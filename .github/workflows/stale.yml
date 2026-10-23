@@ -18,4 +18,4 @@ jobs:
     name: Mark Stale Issues and PRs
     runs-on: linux-amd64-cpu4
     steps:
-      - uses: dsx-ai-factory/dsx-github-actions/.github/actions/stale-check@e8c0885851e9314211f2b3439e827990a46ea593
+      - uses: dsx-ai-factory/dsx-github-actions/.github/actions/stale-check@af41644f80052a43837d7c389d39b4a6204ef367
